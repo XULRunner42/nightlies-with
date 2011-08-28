@@ -1,0 +1,4 @@
+<Files ~ "\.(inc|sq3)$">
+  order allow,deny
+  deny from all
+</Files>

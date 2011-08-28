@@ -1,0 +1,46 @@
+Once you've checked out the example code I've worked out here, you'll need the
+Mustache library for PHP to render the views.
+
+GitHub clone URL:
+https://github.com/bobthecow/mustache.php.git
+
+From your public_html/:
+
+  git clone git://github.com/XULRunner42/Template-PHP.git
+  cd Template-PHP/
+  git clone https://github.com/bobthecow/mustache.php.git
+
+TODO:
+The database is up to you, I have written example classes that pull data from
+other sources.  The most likely path to implement safe templates in your REST
+application is to consider that the objects to render could be from a separate
+server thread capable of providing access to their underlying structured data,
+a server which must implement a JSON-RPC protocol.
+
+Or instead, for SQL data sources, PDO objects are a good idea too.
+
+$a = $PDO->query('select id from test'); 
+$a->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Test'); 
+$obj = $a->fetch(); 
+
+This way, the Test::Test() method can be called if it exists, and public data
+members such as id in the Test object are created or overwritten when the call
+to fetch() occurs.  Safely implementing a more serious back-and-forth dialog
+between the user and the database such that access is protected appropriately
+is an exercise for the reader.
+ 
+Do not forget to perform type-checking on input data, it may also be sufficient
+to pass values from external input sources through a prepared statement that
+binds the inputs into the query through a safe parameterization.
+
+The appropriate action to take when invalid input is detected is also left as
+an exercise for the reader.  Interesting options would include message logging
+and flagging, exception throwing, transaction aborting, some end-user feedback,
+and possibly auto-correction in some cases.
+
+(Imagine an input field Send: who checks spelling against your address book via
+aspell and suggests a destination as you type, or offers an opportunity to add
+the unrecognized recipient to your auto-complete suggestions if it appears to
+be valid... clearly this will require some caching wizardry and browser
+scripting)
+
