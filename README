@@ -1,0 +1,27 @@
+# apt-get install php5-sqlite php-pear php5-dev
+# pecl install Memcache
+# pecl install OAuth
+
+
+Get an API key from https://www.dropbox.com/developers to
+configure Nightlies.php for $consumerKey and $consumerSecret
+
+Set up a Memcache server (localhost or somewhere firewalled)
+and set the address in memcache.php
+
+Try not to pass my e-mail address to strangers on index.html
+
+Remember to set the full path to your system deployment root
+in nightlies_regen, to allow the background cache process to
+operate asynchronously.  Set it also in user.php to the user
+database location, which should be under your deployment root
+in db/ (so, in my case /var/www/nightlies-with/db/users.sq3)
+
+
+Review the necessary changes since "initial commit" on GitHub
+(Only configuration steps are shown in the revision history)
+These steps should be explained clearly by the wording above!
+
+http://github.com/XULRunner42/nightlies-with
+
+E-mail kingdon@tuesdaystudios.com with questions or forks!
