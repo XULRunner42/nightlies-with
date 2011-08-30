@@ -1,7 +1,6 @@
 <?php
 
-//$APPROOT="htp://localhost/~yebyen/";
-$APPROOT="http://nerdland.info/~yebyen/android-x86/";
+$APPROOT="htp://localhost/nightlies-with/";
 
 $consumerKey = '###############';
 $consumerSecret = '###############';

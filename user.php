@@ -10,7 +10,7 @@ class User {
 
     public static function pdo() {
         if (is_null(self::$_db)) {
-            self::$_db=new PDO("sqlite:/home/yebyen/public_html/android-x86/db/users.sq3");
+            self::$_db=new PDO("sqlite:/var/www/nightlies-with/db/users.sq3");
             self::$_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             self::$_db->exec("CREATE TABLE IF NOT EXISTS Users (Id INTEGER
                 PRIMARY KEY, token TEXT, token_secret TEXT, referral_link TEXT,

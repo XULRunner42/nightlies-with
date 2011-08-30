@@ -1,6 +1,6 @@
 <?php
 $MEMCACHE_SERVERS=array(
-  "127.0.0.1", //irie-arch
+  "10.8.89.1", //irie-arch
 );
 
 global $memcache;

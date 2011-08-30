@@ -50,7 +50,7 @@ unlockNightlies_R();
 function renderNightlies($oauth) {
     $errorcode="";
     $nightlies=new Nightlies();
-    $template=file_get_contents('/home/yebyen/public_html/android-x86/nightlies.mustache');
+    $template=file_get_contents('/var/www/nightlies-with/nightlies.mustache');
 
     $users=User::fetchUsers();
     $nightlies->total_users=count($users);
