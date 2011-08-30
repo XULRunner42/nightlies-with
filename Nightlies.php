@@ -1,6 +1,6 @@
 <?php
 
-$APPROOT="htp://localhost/nightlies-with/";
+$APPROOT="http://localhost/nightlies-with/";
 
 $consumerKey = '###############';
 $consumerSecret = '###############';
